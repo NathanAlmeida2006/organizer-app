@@ -42,13 +42,20 @@
   color: var(--muted);
 }
 
-.cue {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 1.5rem;
-  text-align: center;
-  color: var(--muted);
+/* telas largas: o bloco vira uma coluna central. O corpo do texto continua
+   justificado (regra global de p/.prose); o resto acompanha o eixo */
+@media (min-width: 1200px) {
+  .inner {
+    text-align: center;
+  }
+
+  .lead {
+    margin-inline: auto;
+  }
+
+  .acoes {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 900px) {

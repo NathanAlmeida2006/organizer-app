@@ -18,6 +18,7 @@ export const site = {
 export const nav = [
   { id: 'abertura', label: 'Abertura' },
   { id: 'paleta', label: 'Paleta' },
+  { id: 'logo', label: 'Logo' },
   { id: 'tipografia', label: 'Tipografia' },
   { id: 'vibe', label: 'Vibe da marca' },
   { id: 'persona', label: 'Persona' },
@@ -29,20 +30,23 @@ export const preloader = {
   line: 'você decide, eu organizo',
 }
 
+export const capa = {
+  scrollCue: 'role para folhear ↓',
+}
+
 export const hero = {
   kicker: 'book de padrões · versão 1 · setembro de 2026',
   titleLines: ['Você decide,', 'eu organizo.'],
   lead:
     'Este é o book de padrões da marca: a paleta, a tipografia, a vibe, a persona e o método reunidos em um só lugar. Consultoria de organização de alta precisão e sensibilidade, para residências e empresas de Blumenau, sem venda de produtos, sem descarte forçado, sem julgamento.',
   cta: { label: 'começar pela paleta', href: '#paleta' },
-  scrollCue: 'role para folhear ↓',
 }
 
 export const numeros = {
   kicker: 'o serviço em números honestos',
   title: 'O que está fechado.',
   items: [
-    { value: 3, label: 'cores na escala principal, na proporção 60-30-10' },
+    { value: 5, label: 'cores na escala principal, na proporção 60-20-10-5-5' },
     { value: 3, label: 'famílias tipográficas, com divisão funcional estrita' },
     { value: 5, label: 'etapas do método, da triagem à manutenção' },
     { value: 4, label: 'destinos possíveis para cada item, e nenhum é descarte automático' },
@@ -54,23 +58,23 @@ export const numeros = {
 export const marqueeEtapas = ['triagem', 'proposta', 'execução', 'entrega', 'manutenção']
 
 export const paleta = {
-  kicker: 'escala principal · regra 60-30-10',
+  kicker: 'escala principal · regra 60-20-10-5-5',
   title: 'Paleta.',
   items: [
     {
       pct: '60%',
       papel: 'Dominante',
       nome: 'Off-white creme / pergaminho',
-      hex: '#F0EFE9',
+      hex: '#F0E9D6',
       aplicacao: 'Fundo de apresentações, feed, papelaria e propostas em PDF.',
       psicologia:
         'Substitui o branco puro, frio e hospitalar, por um tom quente de porcelana e linho cru. Amplitude e serenidade, sem virar ambiente clínico.',
     },
     {
-      pct: '30%',
+      pct: '20%',
       papel: 'Identidade e bem-estar',
       nome: 'Verde sálvia orgânico',
-      hex: '#768478',
+      hex: '#7D8A79',
       aplicacao: 'Blocos de destaque, cabeçalhos de proposta, capas de manual e etiquetagem.',
       psicologia:
         'Cor de restauração, equilíbrio e reconexão biofílica. Atua como tônico visual: comunica que a organização traz paz, não apenas ordem.',
@@ -79,19 +83,37 @@ export const paleta = {
       pct: '10%',
       papel: 'Acento e status',
       nome: 'Ouro envelhecido / ochre',
-      hex: '#D8A14D',
+      hex: '#E2CA8C',
       aplicacao: 'Monograma, selos de sigilo, botões de ação e acabamento impresso.',
       psicologia:
         'Responde à motivação nº 1 da persona: status e prestígio. O metálico aquecido eleva a percepção de valor e ancora a marca no luxo silencioso.',
+    },
+    {
+      pct: '5%',
+      papel: 'Complementar fria',
+      nome: 'Azul névoa',
+      hex: '#98AEBC',
+      aplicacao: 'Detalhes de apoio: ícones, gráficos, blocos pequenos e peças de ambientação. Sustenta a tinta por cima (5,17:1).',
+      psicologia:
+        'Um frio calmo que respira ao lado do sálvia. Remete a ar e espaço livre, reforçando a promessa de uma casa que volta a ter respiro, sem esfriar o luxo silencioso do conjunto.',
+    },
+    {
+      pct: '5%',
+      papel: 'Complementar quente',
+      nome: 'Argila',
+      hex: '#9E866C',
+      aplicacao: 'Acabamentos que pedem calor: etiquetas, papel e tons de material. Só bloco e display: não sustenta texto miúdo (3,45:1 com a tinta).',
+      psicologia:
+        'Um tom de terra que aquece o off-white e conversa com os materiais da marca: fibra natural, madeira e linho. Dá sensação de lar sem escurecer o conjunto.',
     },
   ],
   derivados: {
     title: 'Dois neutros derivados',
     lead:
-      'O sálvia é tom médio: não sustenta texto corrido contra nenhum dos extremos (3,41:1 sobre o off-white, 3,03:1 sobre a tinta). Para o meio digital a escala ganha dois derivados do próprio sálvia, que não são cores novas, são o mesmo verde em outra claridade. Toda leitura acontece neles; o sálvia puro fica onde é bloco, régua ou display grande.',
+      'O sálvia é tom médio: não sustenta texto corrido contra nenhum dos extremos (3,00:1 sobre o off-white, 3,28:1 sobre a tinta). Para o meio digital a escala ganha dois derivados do próprio sálvia, que não são cores novas, são o mesmo verde em outra claridade. Toda leitura acontece neles; o sálvia puro fica onde é bloco, régua ou display grande.',
     items: [
-      { nome: 'Sálvia escurecido (tinta)', hex: '#2E3A30', nota: 'Fundo escuro e tinta sobre claro · 10,33:1 com o off-white' },
-      { nome: 'Sálvia médio', hex: '#5C6B5E', nota: 'Rótulo e microcópia sobre off-white · 4,90:1' },
+      { nome: 'Sálvia escurecido (tinta)', hex: '#2E3A30', nota: 'Fundo escuro e tinta sobre claro · 9,82:1 com o off-white' },
+      { nome: 'Sálvia médio', hex: '#5C6B5E', nota: 'Rótulo e microcópia sobre off-white · 4,66:1' },
     ],
   },
   aplicacao: {
@@ -100,6 +122,36 @@ export const paleta = {
       'Digital (Instagram e propostas em PDF): tela em off-white, títulos e blocos explicativos em sálvia, autoridade e marca em ouro envelhecido.',
       'Acabamento físico na casa do cliente: etiqueta em fundo off-white fosco, tipografia Inter em sálvia. Discrição acima de tudo: a etiqueta não deve competir com o armário.',
       'Materiais preferidos: acrílico translúcido, cestaria de fibra natural, caixa em linho. Evitar o excesso de organizador plástico aparente.',
+    ],
+  },
+}
+
+export const logo = {
+  kicker: 'símbolo · assinatura · aplicações',
+  title: 'Logo.',
+  lead:
+    'O telhado aberto: uma linha só desenha a casa, com a chaminé e dois arcos por baixo, e da chaminé nasce um ramo. É o ambiente que a marca organiza, visto de fora e em silêncio. O traço é fino e desenhado a régua; o ramo é a única peça em ouro, o acento de 10%.',
+  lockups: [
+    {
+      id: 'principal',
+      nome: 'Assinatura principal',
+      uso: 'Capa de proposta, papelaria, rodapé de site. Tamanho mínimo: 120px de largura do símbolo.',
+      tema: 'claro',
+    },
+    {
+      id: 'reduzida',
+      nome: 'Versão reduzida',
+      uso: 'Cabeçalho de documento, etiqueta de ambiente, rodapé de post. O mesmo bloco em negativo, sobre sálvia: tudo em off-white, só o ramo segue em ouro.',
+      tema: 'salvia',
+    },
+  ],
+  regras: {
+    title: 'O que não fazer',
+    items: [
+      'Não trocar a cor do ramo: o ouro é o que identifica a marca à distância. O traço do telhado muda conforme o fundo; o ramo, nunca.',
+      'Não aplicar o símbolo sálvia sobre o próprio sálvia nem sobre a tinta — o contraste some. Sobre fundo escuro, o traço vira off-white.',
+      'Não esticar, inclinar nem adicionar sombra. A profundidade da marca vem do material impresso, não do arquivo.',
+      'Respiro mínimo em volta do bloco: a altura da chaminé do símbolo, em todos os lados.',
     ],
   },
 }

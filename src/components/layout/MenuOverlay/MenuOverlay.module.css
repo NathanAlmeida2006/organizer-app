@@ -3,7 +3,7 @@
   inset: 0;
   z-index: var(--z-overlay);
   background: var(--sobreposicao);
-  color: var(--off-white);
+  color: var(--tinta);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,14 +61,14 @@
 
 .link:hover,
 .link:focus-visible {
-  color: var(--ouro);
+  /* o ouro não passa de 2:1 sobre o off-white; quem marca o hover é o
+     sálvia escuro, o mesmo acento das seções */
+  color: var(--salvia-escuro);
   transform: translateX(0.3em);
 }
 
 .index {
-  /* o ouro sobre a tinta passa (5.17), mas em corpo micro o off-white
-     rebaixado lê melhor e não compete com o hover */
-  color: rgb(240 239 233 / 62%);
+  color: rgb(46 58 48 / 62%);
 }
 
 .foot {
@@ -93,5 +93,5 @@
 }
 
 .claim {
-  color: rgb(240 239 233 / 62%);
+  color: rgb(46 58 48 / 62%);
 }

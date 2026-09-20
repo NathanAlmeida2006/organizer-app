@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Footer from './components/layout/Footer/Footer'
 import Header from './components/layout/Header/Header'
+import Capa from './components/sections/Capa/Capa'
+import Logo from './components/sections/Logo/Logo'
 import Metodo from './components/sections/Metodo/Metodo'
 import Numeros from './components/sections/Numeros/Numeros'
 import Paleta from './components/sections/Paleta/Paleta'
@@ -35,9 +37,11 @@ export default function App() {
       <Cursor />
       <Header />
       <main id="conteudo">
+        <Capa />
         <Hero />
         <Numeros />
         <Paleta />
+        <Logo />
         <Tipografia />
         <Vibe />
         <Persona />

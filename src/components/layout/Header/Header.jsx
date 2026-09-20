@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 import { site } from '../../../data/content'
 import useHeaderHide from '../../../hooks/useHeaderHide'
-import useHeaderTheme from '../../../hooks/useHeaderTheme'
 import { onAnchorClick } from '../../../hooks/useLenis'
 import useMagnetic from '../../../hooks/useMagnetic'
 import RollingText from '../../ui/RollingText'
@@ -10,8 +9,7 @@ import styles from './Header.module.css'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const { hidden, atTop } = useHeaderHide()
-  const theme = useHeaderTheme()
+  const { hidden } = useHeaderHide()
   const menuBtnRef = useRef(null)
   const magRef = useMagnetic(0.3)
 
@@ -25,8 +23,6 @@ export default function Header() {
       <header
         className={styles.header}
         data-hidden={hidden && !menuOpen}
-        data-top={atTop}
-        data-on={menuOpen ? 'escuro' : theme}
       >
         <div className={styles.inner}>
           <a href="#abertura" className={styles.wordmark} onClick={onAnchorClick}>

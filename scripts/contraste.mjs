@@ -4,12 +4,14 @@
  * (4.5:1 para texto normal). Rode com `node scripts/contraste.mjs`.
  */
 const cor = {
-  offWhite: '#f0efe9',
-  salvia: '#768478',
-  ouro: '#d8a14d',
+  offWhite: '#f0e9d6',
+  salvia: '#7d8a79',
+  ouro: '#e2ca8c',
   tinta: '#2e3a30',
-  salviaClaro: '#dadcd5',
+  salviaClaro: '#dbd8c5',
   salviaEscuro: '#4f5c4a',
+  azulNevoa: '#98aebc',
+  argila: '#9e866c',
 }
 
 const lin = (c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4)
@@ -28,10 +30,11 @@ const pares = [
   ['claro', cor.offWhite, cor.tinta, 'texto corrido'],
   ['claro', cor.offWhite, cor.salviaEscuro, 'acento'],
   ['ouro', cor.ouro, cor.tinta, 'texto corrido e acento'],
-  ['menu', cor.tinta, cor.offWhite, 'links do menu em tela cheia'],
-  ['menu', cor.tinta, cor.ouro, 'link sob o cursor'],
+  ['menu', cor.offWhite, cor.tinta, 'links do menu em tela cheia'],
+  ['menu', cor.offWhite, cor.salviaEscuro, 'link sob o cursor'],
   ['bloco', cor.salviaClaro, cor.tinta, 'texto sobre superfície interna'],
   ['bloco', cor.salviaClaro, cor.salviaEscuro, 'acento sobre superfície interna'],
+  ['azul', cor.azulNevoa, cor.tinta, 'texto sobre bloco azul névoa'],
 ]
 
 let falhou = false
@@ -42,10 +45,12 @@ for (const [tema, bg, fg, papel] of pares) {
   console.log(`${ok ? '✓' : '✗'} ${tema.padEnd(7)} ${bg} / ${fg}  ${r.toFixed(2)}:1  ${papel}`)
 }
 
-/* O sálvia puro NÃO passa em nenhum dos extremos — é justamente por isso que
-   existem os derivados. Se um dia passar, a razão dos derivados caiu. */
-const contra = [razao(cor.salvia, cor.offWhite), razao(cor.salvia, cor.tinta)]
-console.log(`· sálvia puro vs extremos: ${contra.map((r) => r.toFixed(2)).join(' / ')} — por isso só bloco e display`)
-if (contra.some((r) => r >= 4.5)) throw new Error('sálvia puro passou em AA: revise a nota dos derivados')
+/* O sálvia puro e a argila NÃO passam em nenhum dos extremos — é justamente
+   por isso que existem os derivados. Se um dia passarem, a razão caiu. */
+for (const [nome, hex] of [['sálvia', cor.salvia], ['argila', cor.argila]]) {
+  const contra = [razao(hex, cor.offWhite), razao(hex, cor.tinta)]
+  console.log(`· ${nome} puro vs extremos: ${contra.map((r) => r.toFixed(2)).join(' / ')} — por isso só bloco e display`)
+  if (contra.some((r) => r >= 4.5)) throw new Error(`${nome} passou em AA: revise a nota dos derivados`)
+}
 if (falhou) throw new Error('par de tema abaixo de 4.5:1 — corrija tokens.css/base.css')
 console.log('\nok: todos os pares de tema passam em WCAG AA')

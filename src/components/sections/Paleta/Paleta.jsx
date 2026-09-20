@@ -21,8 +21,8 @@ function useCopiar() {
 
 /*
  * A etiqueta fica FORA do bloco de cor, não sobre ele: o sálvia é tom médio
- * e não sustenta texto miúdo contra nenhum dos extremos (3,03 com a tinta,
- * 3,41 com o off-white). Fora, a etiqueta herda o contraste da seção.
+ * e não sustenta texto miúdo contra nenhum dos extremos (3,28 com a tinta,
+ * 3,00 com o off-white). Fora, a etiqueta herda o contraste da seção.
  */
 function Amostra({ item, copiado, copiar }) {
   return (
@@ -58,7 +58,7 @@ export default function Paleta() {
           </h2>
         </div>
 
-        {/* A régua da proporção: a própria regra 60-30-10 desenhada */}
+        {/* A régua da proporção: a própria regra 60-20-10-5-5 desenhada */}
         <div className={`${styles.regua} reveal`} style={{ '--i': 2 }} aria-hidden="true">
           {paleta.items.map((item) => (
             <span
@@ -82,7 +82,7 @@ export default function Paleta() {
         </ol>
 
         <div className={styles.rodape}>
-          <div className={`${styles.bloco} reveal`} style={{ '--i': 6 }}>
+          <div className={`${styles.bloco} reveal`} style={{ '--i': 8 }}>
             <h3 className={styles.blocoTitle}>{paleta.derivados.title}</h3>
             <p className={`${styles.blocoLead} muted`}>{paleta.derivados.lead}</p>
             <ul className={styles.derivados}>
@@ -99,7 +99,7 @@ export default function Paleta() {
               ))}
             </ul>
           </div>
-          <div className={`${styles.bloco} reveal`} style={{ '--i': 7 }}>
+          <div className={`${styles.bloco} reveal`} style={{ '--i': 9 }}>
             <h3 className={styles.blocoTitle}>{paleta.aplicacao.title}</h3>
             <ul className={styles.lista}>
               {paleta.aplicacao.items.map((texto) => (

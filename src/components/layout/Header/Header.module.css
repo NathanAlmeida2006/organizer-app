@@ -12,13 +12,10 @@
   transform: translateY(-100%);
 }
 
-/* tinta sobre qualquer seção; off-white só quando o menu escuro está aberto */
+/* todo o book corre no claro: o header é tinta em qualquer seção e também
+   sobre o menu em tela cheia */
 .header {
   color: var(--tinta);
-}
-
-.header[data-on='escuro'] {
-  color: var(--off-white);
 }
 
 .inner {

@@ -1,0 +1,22 @@
+.capa {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding-top: calc(var(--header-h) + 2rem);
+}
+
+.marca {
+  display: flex;
+  justify-content: center;
+}
+
+.cue {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.5rem;
+  text-align: center;
+  color: var(--muted);
+}

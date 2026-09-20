@@ -1,0 +1,75 @@
+/* --escala multiplica tudo junto; 1 é o tamanho de card (seção Logo) */
+.principal {
+  --nome: var(--salvia);
+  --funcao: var(--salvia-escuro);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(1.1rem * var(--escala, 1));
+}
+
+.negativo {
+  --nome: var(--off-white);
+  --funcao: var(--off-white);
+}
+
+.principal svg {
+  width: calc(240px * var(--escala, 1));
+  height: auto;
+}
+
+/* o padding-left iguala o espaçamento que o último caractere carrega à direita: centra o bloco de fato */
+.nome {
+  padding-left: 0.16em;
+  font-family: var(--font-display);
+  font-size: calc(1.75rem * var(--escala, 1));
+  letter-spacing: 0.16em;
+  line-height: 1;
+  color: var(--nome);
+}
+
+.juh {
+  font-weight: 600;
+}
+
+.vechani {
+  font-weight: 300;
+}
+
+.funcao {
+  padding-left: 0.42em;
+  font-family: var(--font-sans);
+  font-size: calc(0.6rem * (0.7 + 0.3 * var(--escala, 1))); /* discreto: cresce bem devagar com a escala */
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--funcao);
+}
+
+/* modo capa: o mesmo bloco, em escala de abertura de livro */
+.grande {
+  --escala: 1;
+}
+
+@media (min-width: 700px) {
+  .grande {
+    --escala: 1.5;
+  }
+}
+
+@media (min-width: 900px) {
+  .grande {
+    --escala: 1.8;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grande {
+    --escala: 2;
+  }
+}
+
+@media (min-width: 1600px) {
+  .grande {
+    --escala: 2.4;
+  }
+}

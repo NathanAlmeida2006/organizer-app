@@ -23,7 +23,8 @@ body {
 }
 
 html.is-loading,
-html.menu-open {
+html.menu-open,
+html.lightbox-open {
   overflow: hidden;
 }
 
@@ -85,8 +86,8 @@ ol {
  * luxo silencioso do segmento é claro, e a persona procura "de revista",
  * não penumbra. Contrastes verificados, texto primeiro:
  *
- *   claro  #f0efe9 · texto tinta 10.33 · acento sálvia-escuro 6.15
- *   ouro   #d8a14d · texto tinta  5.17 · acento tinta 5.17
+ *   claro  #f0e9d6 · texto tinta 9.82 · acento sálvia-escuro 5.85
+ *   ouro   #e2ca8c · texto tinta  7.40 · acento tinta  7.40
  */
 [data-theme='claro'] {
   --bg: var(--off-white);

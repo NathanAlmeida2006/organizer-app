@@ -4,30 +4,35 @@
  * Estrutura de escala, curvas e durações: herdadas do site da Click.Jr.
  */
 :root {
-  /* Paleta — as três cores da regra 60-30-10, como estão no book */
-  --off-white: #f0efe9; /* 60% dominante */
-  --salvia: #768478; /* 30% identidade */
-  --ouro: #d8a14d; /* 10% acento e status */
+  /* Paleta — as cores da regra 60-20-10-5-5, como estão no book */
+  --off-white: #f0e9d6; /* 60% dominante */
+  --salvia: #7d8a79; /* 20% identidade */
+  --ouro: #e2ca8c; /* 10% acento e status */
+
+  /* Complementares: 5% cada, cores de apoio. O azul
+     sustenta a tinta por cima (5,17); a argila não — é bloco e display. */
+  --azul-nevoa: #98aebc;
+  --argila: #9e866c;
 
   /*
    * Três derivados do sálvia, não cores novas: o mesmo verde clareado e
    * escurecido. Existem por acessibilidade — o sálvia puro é tom médio e
-   * não sustenta texto corrido contra nenhum dos extremos (off-white 3,41,
-   * tinta 3,03). Toda leitura acontece nos derivados; o sálvia puro fica
+   * não sustenta texto corrido contra nenhum dos extremos (off-white 3,00,
+   * tinta 3,28). Toda leitura acontece nos derivados; o sálvia puro fica
    * onde é bloco de cor, régua ou display grande.
    */
-  --salvia-claro: #dadcd5; /* sálvia a 18% sobre o off-white: o fundo de identidade */
+  --salvia-claro: #dbd8c5; /* sálvia a 18% sobre o off-white: o fundo de identidade */
   --salvia-escuro: #4f5c4a; /* acento e rótulo, legível sobre os dois fundos claros */
   --tinta: #2e3a30; /* sálvia no extremo escuro: a tinta de todo o texto */
 
   /*
    * Papéis de cor. O documento inteiro é claro: manda a própria regra
-   * 60-30-10 do book, em que o off-white é o dominante e o sálvia entra
+   * 60-20-10-5-5 do book, em que o off-white é o dominante e o sálvia entra
    * como bloco de identidade. A tinta virou só tinta — não é mais fundo
    * de seção nenhuma.
    */
   --fundo: var(--off-white);
-  --sobreposicao: var(--tinta); /* menu em tela cheia: o único painel escuro */
+  --sobreposicao: var(--off-white); /* menu em tela cheia */
 
   /*
    * Tipografia — três famílias com divisão funcional estrita (§2):

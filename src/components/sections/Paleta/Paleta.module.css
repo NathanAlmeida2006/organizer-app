@@ -1,4 +1,4 @@
-/* Régua da proporção: as três cores no peso exato da regra 60-30-10 */
+/* Régua da proporção: as cores no peso exato da regra 60-20-10-5-5 */
 .regua {
   display: flex;
   height: clamp(2.5rem, 5vw, 4rem);
@@ -14,8 +14,9 @@
 }
 
 /*
- * Grid editorial desalinhado, herdado dos cases: as três cores não entram em
- * fileira militar — a dominante ocupa mais, e cada uma desce um degrau.
+ * Grid editorial desalinhado, herdado dos cases: as cores não entram em
+ * fileira militar — a dominante ocupa mais, cada uma desce um degrau e as
+ * duas complementares (5%) ocupam o menor espaço.
  */
 .grid {
   display: grid;
@@ -33,7 +34,17 @@
 }
 
 .card:nth-child(3) {
-  grid-column: 3 / span 6;
+  grid-column: 2 / span 6;
+  margin-top: clamp(1rem, 3vw, 2.5rem);
+}
+
+.card:nth-child(4) {
+  grid-column: 9 / span 4;
+  margin-top: clamp(3rem, 8vw, 7rem);
+}
+
+.card:nth-child(5) {
+  grid-column: 5 / span 4;
   margin-top: clamp(1rem, 3vw, 2.5rem);
 }
 

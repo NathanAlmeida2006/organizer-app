@@ -1,8 +1,9 @@
 /*
- * O painel percorre a escala e termina no off-white, o dominante, que é
- * onde a marca vive. Corte seco entre as cores (steps(1) por keyframe): a
- * troca precisa ser percebida como troca, não como transição. A tinta é
- * sempre o texto, nunca o fundo — e o ouro aparece uma vez, como manda a
+ * O painel percorre a escala (sálvia, ouro, azul névoa, argila) e termina
+ * no off-white, o dominante, que é onde a marca vive. Corte seco entre as
+ * cores (steps(1) por keyframe): a troca precisa ser percebida como troca,
+ * não como transição. O texto acompanha o fundo: tinta sobre os claros,
+ * off-white sobre o escuro (argila). O ouro aparece uma vez, como manda a
  * fatia de 10%.
  */
 .preloader {
@@ -14,7 +15,7 @@
   padding-inline: var(--gutter);
   background: var(--salvia-claro);
   color: var(--tinta);
-  animation: escala calc(var(--ciclo) * 3) var(--ease-standard) forwards;
+  animation: escala calc(var(--ciclo) * var(--pumps)) var(--ease-standard) forwards;
   transition: transform var(--dur-overlay) var(--ease-expo);
 }
 
@@ -28,12 +29,22 @@
     color: var(--tinta);
     animation-timing-function: steps(1, end);
   }
-  34% {
+  21% {
     background: var(--ouro);
     color: var(--tinta);
     animation-timing-function: steps(1, end);
   }
-  67%,
+  41% {
+    background: var(--azul-nevoa);
+    color: var(--tinta);
+    animation-timing-function: steps(1, end);
+  }
+  61% {
+    background: var(--argila);
+    color: var(--off-white);
+    animation-timing-function: steps(1, end);
+  }
+  81%,
   100% {
     background: var(--off-white);
     color: var(--salvia-escuro);
@@ -52,7 +63,7 @@
   letter-spacing: -0.02em;
   line-height: 1;
   text-align: center;
-  animation: respiro var(--ciclo) var(--ease-expo) 3;
+  animation: respiro var(--ciclo) var(--ease-expo) var(--pumps);
 }
 
 @keyframes respiro {
