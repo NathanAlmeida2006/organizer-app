@@ -12,7 +12,7 @@ export default function Footer() {
   const ref = useReveal({ threshold: 0.1 })
 
   return (
-    <footer className={`section ${styles.footer}`} data-theme="escuro" ref={ref}>
+    <footer className={`section ${styles.footer}`} data-theme="claro" ref={ref}>
       <div className="container">
         <p className={`assina reveal ${styles.assinatura}`} style={{ '--i': 0 }}>
           {footer.titleLines[0]}

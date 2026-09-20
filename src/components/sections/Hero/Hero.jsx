@@ -8,7 +8,7 @@ export default function Hero() {
   const ref = useReveal({ threshold: 0.2 })
 
   return (
-    <section id="abertura" className={`section ${styles.hero}`} data-theme="escuro" ref={ref}>
+    <section id="abertura" className={`section ${styles.hero}`} data-theme="claro" ref={ref}>
       <div className={`container ${styles.inner}`}>
         <p className={`micro reveal ${styles.kicker}`} style={{ '--i': 0 }}>
           {hero.kicker}

@@ -47,7 +47,7 @@ export default function Paleta() {
   const [copiado, copiar] = useCopiar()
 
   return (
-    <section id="paleta" className={`section ${styles.paleta}`} data-theme="escuro" ref={ref}>
+    <section id="paleta" className={`section ${styles.paleta}`} data-theme="claro" ref={ref}>
       <div className="container">
         <div className="section-head">
           <p className="micro reveal" style={{ '--i': 0 }}>

@@ -24,7 +24,7 @@
   justify-content: center;
   aspect-ratio: 4 / 3;
   border-radius: 20px;
-  background: rgb(118 132 120 / 14%);
+  background: var(--salvia-claro);
   overflow: hidden;
 }
 

@@ -8,7 +8,8 @@ const cor = {
   salvia: '#768478',
   ouro: '#d8a14d',
   tinta: '#2e3a30',
-  salviaMedio: '#5c6b5e',
+  salviaClaro: '#dadcd5',
+  salviaEscuro: '#4f5c4a',
 }
 
 const lin = (c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4)
@@ -21,13 +22,16 @@ const razao = (a, b) => {
   return (x + 0.05) / (y + 0.05)
 }
 
-/* [tema, fundo, texto/acento, descrição] — espelha os blocos [data-theme] */
+/* [tema, fundo, texto/acento, descrição] — espelha os blocos [data-theme],
+   o painel do menu e as superfícies internas em sálvia claro */
 const pares = [
-  ['escuro', cor.tinta, cor.offWhite, 'texto corrido'],
-  ['escuro', cor.tinta, cor.ouro, 'acento'],
   ['claro', cor.offWhite, cor.tinta, 'texto corrido'],
-  ['claro', cor.offWhite, cor.salviaMedio, 'acento'],
+  ['claro', cor.offWhite, cor.salviaEscuro, 'acento'],
   ['ouro', cor.ouro, cor.tinta, 'texto corrido e acento'],
+  ['menu', cor.tinta, cor.offWhite, 'links do menu em tela cheia'],
+  ['menu', cor.tinta, cor.ouro, 'link sob o cursor'],
+  ['bloco', cor.salviaClaro, cor.tinta, 'texto sobre superfície interna'],
+  ['bloco', cor.salviaClaro, cor.salviaEscuro, 'acento sobre superfície interna'],
 ]
 
 let falhou = false

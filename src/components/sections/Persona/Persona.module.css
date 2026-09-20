@@ -45,7 +45,7 @@
 .retratoBloco {
   position: relative;
   border-radius: 24px;
-  background: rgb(118 132 120 / 13%);
+  background: var(--salvia-claro);
   padding: clamp(1.75rem, 4vw, 3.25rem);
 }
 

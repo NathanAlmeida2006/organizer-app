@@ -10,19 +10,24 @@
   --ouro: #d8a14d; /* 10% acento e status */
 
   /*
-   * Dois neutros derivados, não cores novas: o sálvia escurecido e o sálvia
-   * médio. Existem por acessibilidade — o sálvia puro é tom médio e não
-   * sustenta texto corrido contra nenhum dos extremos (off-white 3.41,
-   * tinta 3.03). Toda leitura acontece nos derivados; o sálvia puro fica
+   * Três derivados do sálvia, não cores novas: o mesmo verde clareado e
+   * escurecido. Existem por acessibilidade — o sálvia puro é tom médio e
+   * não sustenta texto corrido contra nenhum dos extremos (off-white 3,41,
+   * tinta 3,03). Toda leitura acontece nos derivados; o sálvia puro fica
    * onde é bloco de cor, régua ou display grande.
    */
-  --tinta: #2e3a30; /* sálvia escurecido: fundo escuro e tinta sobre claro */
-  --salvia-medio: #5c6b5e; /* sálvia rebaixado: rótulo legível sobre off-white */
+  --salvia-claro: #dadcd5; /* sálvia a 18% sobre o off-white: o fundo de identidade */
+  --salvia-escuro: #4f5c4a; /* acento e rótulo, legível sobre os dois fundos claros */
+  --tinta: #2e3a30; /* sálvia no extremo escuro: a tinta de todo o texto */
 
-  /* Papéis de cor — o que o documento inteiro respira por baixo dos temas */
-  --escuro: var(--tinta);
-  --acento-escuro: var(--ouro);
-  --sobreposicao: var(--tinta); /* menu em tela cheia */
+  /*
+   * Papéis de cor. O documento inteiro é claro: manda a própria regra
+   * 60-30-10 do book, em que o off-white é o dominante e o sálvia entra
+   * como bloco de identidade. A tinta virou só tinta — não é mais fundo
+   * de seção nenhuma.
+   */
+  --fundo: var(--off-white);
+  --sobreposicao: var(--tinta); /* menu em tela cheia: o único painel escuro */
 
   /*
    * Tipografia — três famílias com divisão funcional estrita (§2):

@@ -11,8 +11,8 @@
 
 html {
   /* Chão atrás do stack sticky: cada .section pinta o próprio fundo, então
-     isto só aparece em overscroll. O documento abre e fecha no escuro. */
-  background: var(--escuro);
+     isto só aparece em overscroll. O documento abre e fecha no claro. */
+  background: var(--fundo);
   /* clip (não hidden): corta o vazamento lateral dos reveals translateX
      sem criar scroll container — preserva o position: sticky das seções */
   overflow-x: clip;
@@ -31,8 +31,8 @@ body {
   font-family: var(--font-sans);
   font-size: var(--text-body);
   line-height: 1.6;
-  color: var(--off-white);
-  background: var(--escuro);
+  color: var(--tinta);
+  background: var(--fundo);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -63,12 +63,13 @@ ol {
 }
 
 ::selection {
-  background: var(--acento-escuro);
-  color: var(--escuro);
+  /* o ouro é o acento de 10%: aqui ele aparece inteiro, com a tinta por cima */
+  background: var(--ouro);
+  color: var(--tinta);
 }
 
 :focus-visible {
-  outline: 2px solid var(--acento-escuro);
+  outline: 2px solid var(--salvia-escuro);
   outline-offset: 3px;
 }
 
@@ -79,30 +80,21 @@ ol {
 }
 
 /*
- * Temas de seção — a página alterna os três papéis da regra 60-30-10:
- * off-white dominante, sálvia escurecido (a identidade, rebaixada para
- * sustentar texto) e ouro de acento. Contrastes verificados, texto primeiro:
+ * Temas de seção. O book inteiro corre no off-white dominante, com o ouro
+ * entrando uma vez só, como manda a fatia de 10%. Nenhum fundo escuro: o
+ * luxo silencioso do segmento é claro, e a persona procura "de revista",
+ * não penumbra. Contrastes verificados, texto primeiro:
  *
- *   escuro  #2e3a30 · texto off-white 10.33 · acento ouro 5.17
- *   claro   #f0efe9 · texto tinta 10.33     · acento sálvia-médio 4.90
- *   ouro    #d8a14d · texto tinta 5.17      · acento tinta 5.17
+ *   claro  #f0efe9 · texto tinta 10.33 · acento sálvia-escuro 6.15
+ *   ouro   #d8a14d · texto tinta  5.17 · acento tinta 5.17
  */
-[data-theme='escuro'] {
-  --bg: var(--tinta);
-  --fg: var(--off-white);
-  --accent: var(--ouro);
-  --muted: rgb(240 239 233 / 66%);
-  --line: rgb(240 239 233 / 16%);
-  --btn-ink: var(--ouro);
-}
-
 [data-theme='claro'] {
   --bg: var(--off-white);
   --fg: var(--tinta);
-  --accent: var(--salvia-medio);
+  --accent: var(--salvia-escuro);
   --muted: rgb(46 58 48 / 74%);
   --line: rgb(46 58 48 / 14%);
-  --btn-ink: var(--salvia-medio);
+  --btn-ink: var(--salvia-escuro);
 }
 
 [data-theme='ouro'] {
@@ -125,6 +117,9 @@ ol {
   background: var(--bg);
   color: var(--fg);
   padding-block: var(--section-pad);
+  /* seções de mesma cor deslizando uma sobre a outra não teriam borda
+     visível: o fio marca onde um capítulo cobre o anterior */
+  border-top: 1px solid var(--line);
 }
 
 .container {
@@ -449,8 +444,8 @@ button:focus-visible .roll-inner {
   top: 0.75rem;
   left: 0.75rem;
   z-index: calc(var(--z-preloader) + 1);
-  background: var(--acento-escuro);
-  color: var(--escuro);
+  background: var(--tinta);
+  color: var(--off-white);
   padding: 0.5rem 1rem;
   transform: translateY(-300%);
   transition: transform 200ms var(--ease-standard);

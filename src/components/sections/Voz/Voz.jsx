@@ -13,7 +13,7 @@ export default function Voz() {
   const total = voz.pilares.length
 
   return (
-    <section id="voz" className="section" data-theme="escuro" ref={ref}>
+    <section id="voz" className="section" data-theme="claro" ref={ref}>
       <div className="container">
         <div className="section-head">
           <p className="micro reveal" style={{ '--i': 0 }}>

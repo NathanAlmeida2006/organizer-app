@@ -1,9 +1,9 @@
 /*
- * O painel percorre as três cores da escala e termina no off-white — o
- * dominante, que é onde a marca vive. Corte seco entre elas (steps(1) por
- * keyframe): a troca precisa ser percebida como troca, não como transição.
- * Cada par fundo/texto é escolhido pelo contraste: off-white sobre a tinta,
- * tinta sobre o ouro e sobre o sálvia, sálvia-médio sobre o off-white.
+ * O painel percorre a escala e termina no off-white, o dominante, que é
+ * onde a marca vive. Corte seco entre as cores (steps(1) por keyframe): a
+ * troca precisa ser percebida como troca, não como transição. A tinta é
+ * sempre o texto, nunca o fundo — e o ouro aparece uma vez, como manda a
+ * fatia de 10%.
  */
 .preloader {
   position: fixed;
@@ -12,8 +12,8 @@
   display: grid;
   place-items: center;
   padding-inline: var(--gutter);
-  background: var(--tinta);
-  color: var(--off-white);
+  background: var(--salvia-claro);
+  color: var(--tinta);
   animation: escala calc(var(--ciclo) * 3) var(--ease-standard) forwards;
   transition: transform var(--dur-overlay) var(--ease-expo);
 }
@@ -24,19 +24,19 @@
 
 @keyframes escala {
   0% {
-    background: var(--tinta);
-    color: var(--off-white);
+    background: var(--salvia-claro);
+    color: var(--tinta);
     animation-timing-function: steps(1, end);
   }
   34% {
-    background: var(--salvia);
+    background: var(--ouro);
     color: var(--tinta);
     animation-timing-function: steps(1, end);
   }
   67%,
   100% {
     background: var(--off-white);
-    color: var(--salvia-medio);
+    color: var(--salvia-escuro);
   }
 }
 
@@ -71,6 +71,6 @@
   /* Sem ciclo: o painel entra e sai na cor final */
   .preloader {
     background: var(--off-white);
-    color: var(--salvia-medio);
+    color: var(--salvia-escuro);
   }
 }

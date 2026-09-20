@@ -107,7 +107,7 @@
 .destino {
   border-radius: 20px;
   border: 1px solid var(--line);
-  background: rgb(118 132 120 / 10%);
+  background: var(--salvia-claro);
   padding: clamp(1.1rem, 2vw, 1.6rem);
 }
 

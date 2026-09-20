@@ -12,12 +12,13 @@
   transform: translateY(-100%);
 }
 
-.header[data-on='escuro'] {
-  color: var(--off-white);
+/* tinta sobre qualquer seção; off-white só quando o menu escuro está aberto */
+.header {
+  color: var(--tinta);
 }
 
-.header[data-on='claro'] {
-  color: var(--tinta);
+.header[data-on='escuro'] {
+  color: var(--off-white);
 }
 
 .inner {

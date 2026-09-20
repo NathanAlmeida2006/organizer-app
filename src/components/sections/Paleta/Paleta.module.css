@@ -3,6 +3,7 @@
   display: flex;
   height: clamp(2.5rem, 5vw, 4rem);
   border-radius: 999px;
+  border: 1px solid rgb(46 58 48 / 26%);
   overflow: hidden;
   margin-bottom: clamp(3rem, 7vw, 5.5rem);
 }
@@ -36,8 +37,8 @@
   margin-top: clamp(1rem, 3vw, 2.5rem);
 }
 
-/* A amostra: bloco de cor generoso, cantos suaves, traço quase invisível
-   (o off-white precisa de borda para não sangrar em fundo claro) */
+/* A amostra: bloco de cor generoso, cantos suaves e moldura firme — a
+   amostra off-white é da cor do fundo, então é a moldura que a recorta */
 .amostra {
   display: block;
   width: 100%;
@@ -50,7 +51,7 @@
   width: 100%;
   aspect-ratio: 21 / 9;
   border-radius: 18px;
-  border: 1px solid var(--line);
+  border: 1px solid rgb(46 58 48 / 26%);
   transition:
     transform 500ms var(--ease-expo),
     box-shadow 500ms var(--ease-expo);
@@ -140,7 +141,7 @@
   width: 3rem;
   height: 3rem;
   border-radius: 12px;
-  border: 1px solid var(--line);
+  border: 1px solid rgb(46 58 48 / 26%);
 }
 
 .derivadoNome {
