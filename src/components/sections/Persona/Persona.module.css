@@ -1,0 +1,147 @@
+.oQueE {
+  max-width: 64ch;
+  color: var(--muted);
+}
+
+.dossie {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+/* Ficha técnica: tabela de dados, tratada como etiqueta — é o registro seco */
+.ficha {
+  display: flex;
+  flex-direction: column;
+}
+
+.fichaLinha {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1rem;
+  padding-block: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.fichaLinha:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.fichaRotulo {
+  color: var(--accent);
+  padding-top: 0.28em;
+}
+
+.fichaValor {
+  margin: 0;
+}
+
+/*
+ * O retrato ganha moldura de canto arredondado e um leve fundo sálvia: é a
+ * citação central do book, tratada como bloco de destaque.
+ */
+.retratoBloco {
+  position: relative;
+  border-radius: 24px;
+  background: rgb(118 132 120 / 13%);
+  padding: clamp(1.75rem, 4vw, 3.25rem);
+}
+
+.retrato {
+  font-size: calc(var(--text-body) * 1.1);
+  text-indent: 3.5rem;
+}
+
+.recortes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(2rem, 4.5vw, 4rem);
+  margin-top: clamp(3.5rem, 8vw, 7rem);
+}
+
+.recorteTitle {
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  padding-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.motivacoes {
+  display: flex;
+  flex-direction: column;
+}
+
+.motivacao {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.pos {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1;
+  color: var(--accent);
+}
+
+.motivacaoNome,
+.linhaNome {
+  display: block;
+}
+
+.motivacaoTexto,
+.linhaNota {
+  display: block;
+  color: var(--muted);
+  font-size: 0.97rem;
+  margin-top: 0.2rem;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+}
+
+.linha {
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+/* O grau vira etiqueta-cápsula ao lado do nível */
+.grau {
+  display: inline-block;
+  vertical-align: 0.15em;
+  margin-left: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.3em 0.7em;
+  color: var(--accent);
+}
+
+.conclusao {
+  margin-top: 1.5rem;
+  color: var(--accent);
+  max-width: 52ch;
+}
+
+@media (max-width: 900px) {
+  .dossie,
+  .recortes {
+    grid-template-columns: 1fr;
+  }
+
+  .fichaLinha {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .retrato {
+    text-indent: 0;
+  }
+
+}

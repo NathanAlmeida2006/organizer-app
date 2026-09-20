@@ -1,0 +1,80 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+
+/* a única aparição em corpo grande da terciária: a assinatura */
+.assinatura {
+  font-size: clamp(3rem, 8vw, 7rem);
+  margin-bottom: clamp(3rem, 8vw, 6rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.colTitle {
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-micro);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+.lead {
+  max-width: 34ch;
+  color: var(--muted);
+}
+
+.address {
+  color: var(--muted);
+}
+
+.bottom {
+  margin-top: clamp(3rem, 8vw, 6rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.bottomClaim {
+  color: var(--accent);
+}
+
+/*
+ * O wordmark gigante e cortado no rodapé — recurso editorial: fecha o
+ * documento com a marca, sem virar CTA.
+ */
+.marca {
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 15vw, 13rem);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: -0.04em;
+  line-height: 0.72;
+  color: var(--line);
+  text-align: center;
+  margin-top: 2rem;
+  user-select: none;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

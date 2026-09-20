@@ -1,0 +1,76 @@
+/*
+ * O painel percorre as três cores da escala e termina no off-white — o
+ * dominante, que é onde a marca vive. Corte seco entre elas (steps(1) por
+ * keyframe): a troca precisa ser percebida como troca, não como transição.
+ * Cada par fundo/texto é escolhido pelo contraste: off-white sobre a tinta,
+ * tinta sobre o ouro e sobre o sálvia, sálvia-médio sobre o off-white.
+ */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-preloader);
+  display: grid;
+  place-items: center;
+  padding-inline: var(--gutter);
+  background: var(--tinta);
+  color: var(--off-white);
+  animation: escala calc(var(--ciclo) * 3) var(--ease-standard) forwards;
+  transition: transform var(--dur-overlay) var(--ease-expo);
+}
+
+.preloader[data-leaving='true'] {
+  transform: translateY(-100%);
+}
+
+@keyframes escala {
+  0% {
+    background: var(--tinta);
+    color: var(--off-white);
+    animation-timing-function: steps(1, end);
+  }
+  34% {
+    background: var(--salvia);
+    color: var(--tinta);
+    animation-timing-function: steps(1, end);
+  }
+  67%,
+  100% {
+    background: var(--off-white);
+    color: var(--salvia-medio);
+  }
+}
+
+/*
+ * O crescimento é animação separada, de duração igual a um passo de cor: ela
+ * reinicia sobre cada troca, então o lema "respira" exatamente quando a cor
+ * muda. Sem overshoot — a marca não estala, ela assenta.
+ */
+.marca {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 7vw, 5.5rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-align: center;
+  animation: respiro var(--ciclo) var(--ease-expo) 3;
+}
+
+@keyframes respiro {
+  0% {
+    transform: scale(0.94);
+    opacity: 0.4;
+  }
+  60%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Sem ciclo: o painel entra e sai na cor final */
+  .preloader {
+    background: var(--off-white);
+    color: var(--salvia-medio);
+  }
+}

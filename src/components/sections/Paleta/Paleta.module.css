@@ -1,0 +1,185 @@
+/* Régua da proporção: as três cores no peso exato da regra 60-30-10 */
+.regua {
+  display: flex;
+  height: clamp(2.5rem, 5vw, 4rem);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: clamp(3rem, 7vw, 5.5rem);
+}
+
+.faixa {
+  flex-basis: 0;
+  min-width: 0;
+}
+
+/*
+ * Grid editorial desalinhado, herdado dos cases: as três cores não entram em
+ * fileira militar — a dominante ocupa mais, e cada uma desce um degrau.
+ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.card:nth-child(1) {
+  grid-column: 1 / span 7;
+}
+
+.card:nth-child(2) {
+  grid-column: 8 / span 5;
+  margin-top: clamp(2rem, 7vw, 6rem);
+}
+
+.card:nth-child(3) {
+  grid-column: 3 / span 6;
+  margin-top: clamp(1rem, 3vw, 2.5rem);
+}
+
+/* A amostra: bloco de cor generoso, cantos suaves, traço quase invisível
+   (o off-white precisa de borda para não sangrar em fundo claro) */
+.amostra {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+}
+
+.chip {
+  display: block;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  transition:
+    transform 500ms var(--ease-expo),
+    box-shadow 500ms var(--ease-expo);
+}
+
+.amostra:hover .chip,
+.amostra:focus-visible .chip {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgb(0 0 0 / 22%);
+}
+
+.etiqueta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.85rem;
+}
+
+.pct {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.4vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.hex {
+  color: var(--muted);
+}
+
+.papel {
+  margin-top: 1.25rem;
+  color: var(--accent);
+}
+
+.nome {
+  margin-top: 0.5rem;
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+}
+
+.aplicacao {
+  margin-top: 0.9rem;
+  max-width: 44ch;
+}
+
+.psicologia {
+  margin-top: 0.7rem;
+  max-width: 46ch;
+  font-size: 0.95rem;
+}
+
+.rodape {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  margin-top: clamp(4rem, 9vw, 8rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--line);
+}
+
+.blocoTitle {
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  margin-bottom: 1rem;
+}
+
+.blocoLead {
+  max-width: 54ch;
+  font-size: 0.98rem;
+}
+
+.derivados {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.derivado {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.derivadoChip {
+  flex: 0 0 auto;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.derivadoNome {
+  display: block;
+}
+
+.derivadoNota {
+  display: block;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  border-top: 1px solid var(--line);
+  padding-block: 1rem;
+  color: var(--muted);
+}
+
+.item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+@media (max-width: 900px) {
+  .card:nth-child(n) {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+
+  .card + .card {
+    margin-top: 2.5rem;
+  }
+
+  .rodape {
+    grid-template-columns: 1fr;
+  }
+}

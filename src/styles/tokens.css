@@ -1,0 +1,61 @@
+/*
+ * Design tokens.
+ * Paleta e tipografia: organizer/identidade-marca.md (§2 e §6) e organizer/book.pdf.
+ * Estrutura de escala, curvas e durações: herdadas do site da Click.Jr.
+ */
+:root {
+  /* Paleta — as três cores da regra 60-30-10, como estão no book */
+  --off-white: #f0efe9; /* 60% dominante */
+  --salvia: #768478; /* 30% identidade */
+  --ouro: #d8a14d; /* 10% acento e status */
+
+  /*
+   * Dois neutros derivados, não cores novas: o sálvia escurecido e o sálvia
+   * médio. Existem por acessibilidade — o sálvia puro é tom médio e não
+   * sustenta texto corrido contra nenhum dos extremos (off-white 3.41,
+   * tinta 3.03). Toda leitura acontece nos derivados; o sálvia puro fica
+   * onde é bloco de cor, régua ou display grande.
+   */
+  --tinta: #2e3a30; /* sálvia escurecido: fundo escuro e tinta sobre claro */
+  --salvia-medio: #5c6b5e; /* sálvia rebaixado: rótulo legível sobre off-white */
+
+  /* Papéis de cor — o que o documento inteiro respira por baixo dos temas */
+  --escuro: var(--tinta);
+  --acento-escuro: var(--ouro);
+  --sobreposicao: var(--tinta); /* menu em tela cheia */
+
+  /*
+   * Tipografia — três famílias com divisão funcional estrita (§2):
+   * a serifada de alto contraste anuncia, a neo-grotesca explica, a script
+   * assina. Hierarquia por peso, escala e caixa dentro de cada família.
+   */
+  --font-display: 'Cormorant Garamond', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-script: 'Alex Brush', 'Segoe Script', cursive;
+  --text-display: clamp(3.25rem, 9vw, 9.5rem);
+  --text-h2: clamp(2.25rem, 4.6vw, 4.5rem);
+  --text-h3: clamp(1.25rem, 2vw, 2rem);
+  --text-body: clamp(1rem, 0.94rem + 0.25vw, 1.125rem);
+  --text-micro: 0.75rem;
+
+  /* Motion — nada linear, nada abaixo de 200ms, nada acima de 1s */
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-micro: 350ms;
+  --dur-reveal: 800ms;
+  --dur-overlay: 700ms;
+  --stagger: 80ms;
+
+  /* Layout */
+  --container: 1440px;
+  --gutter: clamp(1rem, 2.5vw, 2rem);
+  --section-pad: clamp(5rem, 12vw, 12.5rem);
+  --header-h: 4.5rem;
+
+  /* Camadas */
+  --z-overlay: 200;
+  --z-preloader: 300;
+  --z-cursor: 400;
+}

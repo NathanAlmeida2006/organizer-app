@@ -1,0 +1,63 @@
+.numeros {
+  padding-bottom: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.cell {
+  border-top: 1px solid var(--line);
+  padding-top: 1.25rem;
+}
+
+.value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.label {
+  color: var(--muted);
+  max-width: 24ch;
+}
+
+.aside {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  max-width: 62ch;
+  color: var(--muted);
+}
+
+.marquee {
+  margin-top: clamp(4rem, 8vw, 7rem);
+  border-block: 1px solid var(--line);
+  padding-block: 1.1rem;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.25rem 1.25rem;
+  }
+
+  .value {
+    font-size: clamp(2.75rem, 12vw, 3.5rem);
+  }
+
+  .label {
+    max-width: none;
+  }
+}

@@ -1,0 +1,111 @@
+.tom {
+  max-width: 60ch;
+  color: var(--muted);
+}
+
+/*
+ * O script de copy como citação: recuo, régua de acento à esquerda e a
+ * primária no corpo — é fala da marca, não texto sobre a marca.
+ */
+.script {
+  margin: 0 0 clamp(3rem, 7vw, 5.5rem);
+  padding-left: clamp(1.25rem, 3vw, 2.5rem);
+  border-left: 2px solid var(--accent);
+  max-width: 68ch;
+}
+
+.scriptRotulo {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.scriptTexto {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.scriptTexto::before {
+  content: '“';
+}
+
+.scriptTexto::after {
+  content: '”';
+}
+
+.carousel {
+  border-top: 1px solid var(--line);
+}
+
+.viewport {
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  transition: transform 700ms var(--ease-expo);
+}
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  padding-block: clamp(2rem, 5vw, 3.5rem);
+  opacity: 0;
+  transition: opacity 450ms var(--ease-standard);
+}
+
+.slide[aria-hidden='false'] {
+  opacity: 1;
+  transition-delay: 150ms;
+}
+
+.pilar {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.gancho {
+  font-size: clamp(1.7rem, 3.4vw, 3rem);
+  margin-bottom: 1.25rem;
+  max-width: 26em;
+}
+
+.a {
+  max-width: 62ch;
+  color: var(--muted);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  border-top: 1px solid var(--line);
+  padding-block: 1.1rem;
+}
+
+.navBtn {
+  font-weight: 500;
+  transition:
+    opacity var(--dur-micro) var(--ease-standard),
+    color var(--dur-micro) var(--ease-standard);
+}
+
+.navBtn:disabled {
+  opacity: 0.32;
+  cursor: default;
+}
+
+.navBtn:not(:disabled):hover,
+.navBtn:not(:disabled):focus-visible {
+  color: var(--accent);
+}
+
+.pagination {
+  color: var(--muted);
+}
+
+.current {
+  color: var(--fg);
+}

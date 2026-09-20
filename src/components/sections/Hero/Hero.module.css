@@ -1,0 +1,60 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  padding-top: calc(var(--header-h) + 2rem);
+}
+
+.inner {
+  position: relative;
+}
+
+.kicker {
+  color: var(--accent);
+  margin-bottom: 1.75rem;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+
+/* "eu organizo." fecha em ouro: o acento de 10% aparece uma vez, no que importa */
+.title :global(.mask-row):last-child {
+  color: var(--accent);
+}
+
+.lead {
+  max-width: 54ch;
+  color: var(--muted);
+  margin-bottom: 2.75rem;
+}
+
+.acoes {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  flex-wrap: wrap;
+}
+
+.claim {
+  color: var(--muted);
+}
+
+.cue {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.5rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .title {
+    font-size: min(var(--text-display), 13vw);
+  }
+
+}
+
