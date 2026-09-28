@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Footer from './components/layout/Footer/Footer'
 import Header from './components/layout/Header/Header'
 import Capa from './components/sections/Capa/Capa'
+import CartaoVisita from './components/sections/CartaoVisita/CartaoVisita'
 import Logo from './components/sections/Logo/Logo'
 import Metodo from './components/sections/Metodo/Metodo'
 import Numeros from './components/sections/Numeros/Numeros'
@@ -42,6 +43,7 @@ export default function App() {
         <Numeros />
         <Paleta />
         <Logo />
+        <CartaoVisita />
         <Tipografia />
         <Vibe />
         <Persona />

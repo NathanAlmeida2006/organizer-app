@@ -1,0 +1,87 @@
+.lead {
+  max-width: 56ch;
+  margin-top: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+/* proporção real de cartão de visita, 9 x 5cm */
+.lado {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 9 / 5;
+  padding: clamp(1rem, 3vw, 1.75rem);
+  border-radius: 12px;
+  border: 1px solid rgb(46 58 48 / 26%);
+  overflow: hidden;
+}
+
+.frente {
+  background: var(--off-white);
+}
+
+.assinatura {
+  --escala: 0.85;
+}
+
+.verso {
+  background: var(--salvia);
+}
+
+.contato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  width: 100%;
+}
+
+.linha {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  width: 100%;
+  max-width: 26ch;
+}
+
+.icone {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: clamp(1.1rem, 2.2vw, 1.5rem);
+  height: clamp(1.1rem, 2.2vw, 1.5rem);
+  color: var(--off-white);
+}
+
+.icone svg {
+  width: 100%;
+  height: 100%;
+}
+
+.texto {
+  flex: 1;
+  text-align: justify;
+  text-align-last: center;
+  color: var(--off-white);
+}
+
+.nome {
+  margin-top: 1rem;
+  font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .assinatura {
+    --escala: 1.1;
+  }
+}

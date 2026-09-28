@@ -2,7 +2,7 @@ import Marca from './Marca'
 import styles from './AssinaturaPrincipal.module.css'
 
 /*
- * Lockup: símbolo, nome em Cormorant Garamond (JUH em peso 600, VECHANI em 300)
+ * Lockup: símbolo, nome em Cormorant Garamond, ambos em peso 300
  * e a função, empilhados e centrados.
  * `grande`: modo capa — escala por faixa de largura.
  * `negativo`: para fundo sálvia — tudo em off-white, só o ramo segue ouro.

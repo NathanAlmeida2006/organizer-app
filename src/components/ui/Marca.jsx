@@ -1,23 +1,17 @@
 /*
- * O símbolo "Telhado aberto": o telhado numa linha só, com a chaminé, dois
- * arcos por baixo e um ramo que nasce da chaminé. É o ambiente que a marca
- * organiza, visto de fora e em silêncio.
- *
- * Só o traço do telhado varia por aplicação — o ramo é sempre ouro, o acento
- * de 10%. A largura vem do CSS de quem usa (o viewBox já dá a proporção).
+ * O símbolo "Cabide no arco": um cabide sustentado por um arco, o gesto de
+ * organizar um closet. A largura vem do CSS de quem usa (o viewBox já dá a
+ * proporção).
  */
-export default function Marca({ traco = 'var(--salvia)', ramo = 'var(--ouro)' }) {
+export default function Marca({ traco = 'var(--salvia)' }) {
   return (
-    <svg viewBox="20 40 400 232" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g fill="none" stroke={traco} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M74.8 254.2 L253.3 118.2 L280.5 139.1 L280.5 109.7 L309.4 109.7 L309.4 161.1 L380.8 215.1" />
-        <path d="M216 244 V216 A20 20 0 0 1 256 216 V244 Z" />
-        <path d="M268 244 V208 A24 24 0 0 1 316 208 V244 Z" />
-      </g>
-      <g fill="none" stroke={ramo} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M295 109.7 C295 97.8 295.8 91 298.4 82.5" />
-        <path d="M296.7 94.4 C306 92.7 312.8 85.9 313.7 78.3 C306 78.3 298.4 84.2 296.7 94.4 Z" />
-        <path d="M295 103.8 C287.3 102.1 282.2 97 281.3 90.2 C288.1 90.2 294.1 95.3 295 103.8 Z" />
+    <svg viewBox="483 264 569 478" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke={traco} strokeWidth="8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M493 730 L545 730 C565 730 578 717 578 697 L578 462 A188 188 0 0 1 954 462 L954 697 C954 717 967 730 987 730 L1042 730" />
+        <path d="M729 441 C730 421 747 408 768 408 C789 408 805 424 804 444 C803 462 790 470 780 477 C770 483 766 490 765 502" />
+        <path d="M765 502 C763 525 745 542 718 558 L655 594 C625 612 606 636 607 664 C608 692 628 716 662 716 L808 716 C822 716 834 715 845 713" />
+        <path d="M765 502 C768 525 786 542 812 558 L884 600 C910 616 924 638 922 662 C920 690 900 708 845 713" />
+        <path d="M614 690 C614 660 640 639 676 639 C712 639 744 660 786 683 C826 705 868 731 928 732" />
       </g>
     </svg>
   )

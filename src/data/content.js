@@ -19,6 +19,7 @@ export const nav = [
   { id: 'abertura', label: 'Abertura' },
   { id: 'paleta', label: 'Paleta' },
   { id: 'logo', label: 'Logo' },
+  { id: 'cartao', label: 'Cartão de visita' },
   { id: 'tipografia', label: 'Tipografia' },
   { id: 'vibe', label: 'Vibe da marca' },
   { id: 'persona', label: 'Persona' },
@@ -130,7 +131,7 @@ export const logo = {
   kicker: 'símbolo · assinatura · aplicações',
   title: 'Logo.',
   lead:
-    'O telhado aberto: uma linha só desenha a casa, com a chaminé e dois arcos por baixo, e da chaminé nasce um ramo. É o ambiente que a marca organiza, visto de fora e em silêncio. O traço é fino e desenhado a régua; o ramo é a única peça em ouro, o acento de 10%.',
+    'O cabide no arco: um arco sustenta o cabide, o gesto de organizar um closet. Traço único, fino e desenhado a régua, sem variação de cor — a cor muda conforme o fundo, nunca a forma.',
   lockups: [
     {
       id: 'principal',
@@ -141,17 +142,31 @@ export const logo = {
     {
       id: 'reduzida',
       nome: 'Versão reduzida',
-      uso: 'Cabeçalho de documento, etiqueta de ambiente, rodapé de post. O mesmo bloco em negativo, sobre sálvia: tudo em off-white, só o ramo segue em ouro.',
+      uso: 'Cabeçalho de documento, etiqueta de ambiente, rodapé de post. O mesmo bloco em negativo, sobre sálvia: tudo em off-white.',
       tema: 'salvia',
     },
   ],
   regras: {
     title: 'O que não fazer',
     items: [
-      'Não trocar a cor do ramo: o ouro é o que identifica a marca à distância. O traço do telhado muda conforme o fundo; o ramo, nunca.',
       'Não aplicar o símbolo sálvia sobre o próprio sálvia nem sobre a tinta — o contraste some. Sobre fundo escuro, o traço vira off-white.',
       'Não esticar, inclinar nem adicionar sombra. A profundidade da marca vem do material impresso, não do arquivo.',
-      'Respiro mínimo em volta do bloco: a altura da chaminé do símbolo, em todos os lados.',
+      'Respiro mínimo em volta do bloco: a altura do arco do símbolo, em todos os lados.',
+    ],
+  },
+}
+
+export const cartao = {
+  kicker: 'papelaria · aplicação do símbolo',
+  title: 'Cartão de visita.',
+  lead: 'Frente e verso do cartão físico, 9 × 5cm: a frente leva a assinatura completa, o verso traz só os canais de contato.',
+  frente: { nome: 'Frente' },
+  verso: {
+    nome: 'Verso',
+    itens: [
+      { icone: 'instagram', texto: '@juhvechani.organizer' },
+      { icone: 'telefone', texto: '(47) 99194-5477' },
+      { icone: 'local', texto: 'Blumenau - SC e região' },
     ],
   },
 }
